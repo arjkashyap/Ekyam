@@ -1,0 +1,141 @@
+
+{% load staticfiles %}
+<link rel = "stylesheet" type = "text/css" href = "{% static "visit/registration.css"%}">
+<head>
+
+
+    <title>Register</title>
+    <style>
+                body
+         {
+	        margin: 0;
+	          padding: 0;
+	            background-image:url({% static 'visit/login/bg3.jpg' %}), linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%);
+	         background-size: cover;
+	        font-family: sans-serif;
+}
+
+
+
+.join-link p{
+    color: #0e028b;
+    font-family: "Bookman Old Style";
+
+}
+
+.join-link:hover{
+    text-decoration: underline;
+
+}
+
+
+
+.register-text{
+
+    color: #2565ff;
+}
+
+.register-button{
+background-color: #2565ff;
+}
+
+.loginBox
+{
+position: absolute;
+
+top: 100%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 550px;
+padding:  40px;
+box-sizing: border-box;
+height: 1100px;
+background: rgba(0,0,0,.6);
+font-size: 12px;
+}
+.user
+{
+width: 100px;
+height: 100px;
+border-radius: 50%;
+overflow: hidden;
+position: absolute;
+top: calc(-100px/2);
+left: calc(50% - 50px);
+}
+h2
+{
+margin: 0;
+padding: 0 0 20px;
+color: #efed40;
+text-align: center;
+}
+.loginBox p
+{
+margin: 0;
+padding: 0;
+font-weight: bold;
+color: #fff;
+    font-size: 20px;
+    margin-left: 40px;
+}
+.loginBox input
+{
+width: 100%;
+margin-bottom: 20px;
+}
+.loginBox input[type="text"],
+.loginBox input[type="Password"]
+{
+border: none;
+border-bottom: 1px solid #fff;
+outline: none;
+height: 40px;
+background: transparent;
+color: #fff;
+font-size: 16px;
+    font-weight: bold;
+}
+::placeholder
+{
+color: rgba(255,255,255,.5);
+}
+.loginBox input[type="submit"]
+{
+border: none;
+outline: none;
+height: 40px;
+color: #fff;
+font-size: 16px;
+background: #2565ff;
+cursor: pointer;
+border-radius: 20px;
+}
+.loginBox input[type="submit"]:hover
+{
+background: #efed40;
+color: #262626;
+}
+.loginBox a
+{
+color: #fff;
+font-size: 14px;
+font-weight: bold;
+text-decoration: none;
+}
+
+    </style>
+
+
+</head>
+
+<body>
+    <form method="post" novalidate enctype="multipart/form-data" class = "loginBox">
+        {% csrf_token %}
+			<h2 class = "register-text" style="font-size: 30px;"> Add Incubator</h2>
+            {{ form.as_p }}
+
+        <input class = "register-button" type="submit" name="" value="Add Incubator">
+
+    </form>
+</body>

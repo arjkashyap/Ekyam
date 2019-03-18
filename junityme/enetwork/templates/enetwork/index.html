@@ -1,0 +1,115 @@
+{%extends 'enetwork/base.html' %}
+{%load staticfiles%}
+{%block title%}
+    Ekyam Home: India's First Entrepenurial Ecosystem
+{%endblock%}
+{%block content%}
+
+
+<br>
+<br>
+<br>
+<br>
+<style>
+  body {
+    /* The image used */
+     background-image: url("{% static "startup/background/img2.jpg" %}");
+
+    /* Set a specific height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+<body>
+<div class="container">
+  <!-- Heading Row -->
+  <center>
+    <div class="row my-4">
+      <div class="col-lg-8">
+        <i mg class="img-fluid img-rounded" src="{%static "main/background/img3.jpg"%}" alt="">
+      </div>
+
+  <!-- /slide show thing !-->
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-4" style="background:rgba(51, 49, 49, 0.6)">
+        <center><h1 style="color:rgb(255, 255, 255) "> Ekyam Network</h1></center>
+        <p style="font-family:Comic Sans MS;color:rgb(255, 255, 255) " >Join E-Network and bring real time 
+          solutions. View anomalies from all around the nation, pitch ideas or join groups.
+        </p>
+        <center><a class="btn btn-primary btn-lg" href= "{%url "enetwork:list-question"%}">Solve </a></center>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+  </center>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary  text-center">
+      <div class="card-body">
+        <p class="text-white m-0">"If You Dont Build Your Dream,
+          <br/> Someone Will Hire You To Build Theirs.
+          "</p>
+      </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Post Problems </h2>
+            <p class="card-text">Necessity is the mother of inventions. Ideas are generated to solve problem around you.
+                    Post an anomaly around you so people can come up with an idea to solve.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href='{% url 'enetwork:post-question' %}' class="btn btn-primary">Visit</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Provide solution</h2>
+            <p class="card-text">
+              Team up with some of the people accross the nation and bring a change
+              in the society. Use your skills to solve real time problems.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url "enetwork:list-question" %}" class="btn btn-primary">Visit</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Mentors</h2>
+            <p class="card-text">No one can understand a startup better than a qualified mentor with
+              experience in the same. Mentors understand the needs of an early stage startup and provide
+              guidance in buisness and technical fields
+            </p>
+          </div><div class="card-footer">
+              <a  class="btn btn-primary">Visit</a>
+            </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+  </div>
+</body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- /.container -->
+  {%endblock%}
+

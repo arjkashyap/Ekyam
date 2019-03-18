@@ -1,0 +1,39 @@
+.list_items{
+    position: fixed;
+    align-content: center;
+    list-style-type: None;
+    box-sizing: border-box;
+    width: 900px;
+    padding-left: none;
+    padding-right: 200px;
+    display: inline-block;
+}
+h3{
+    font-family: "Gill Sans MT";
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.inc_img{
+    position: fixed;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+p{
+    font-size: small;
+    font-family: "Palatino Linotype";
+    text-align: left;
+ }
+
+.city{
+    font-family: "Copperplate Gothic Light";
+    font-weight: bold;
+}
+
+.rating{
+    font-family: "Palatino Linotype";
+    font-size: 25px;
+
+}

@@ -1,0 +1,103 @@
+{%extends 'main/base.html'%}
+{%load staticfiles%}
+{%block title%}
+    Ekyam Home: India's First Entrepenurial Ecosystem
+{%endblock%}
+{%block content%}
+
+
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+  <!-- Heading Row -->
+  <center>
+    <div class="row my-4">
+      <div class="col-lg-8">
+        <i mg class="img-fluid img-rounded" src="{%static "main/background/img3.jpg"%}" alt="">
+      </div>
+
+      
+
+  <!-- /slide show thing !-->
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-4" style="background:rgba(51, 49, 49, 0.6)">
+        <center><h1 style="color:rgb(255, 255, 255) "> Incubator Services</h1></center>
+        <p style="font-family:Comic Sans MS;color:rgb(255, 255, 255) " >Access to various buisness accelaration programs and Incubator services spread across the country.
+            Search Buisness Incubators nearby your location and find details, terms and services provides.
+            Filter demands, locations, services. Review incubators through rating system and help us rank.
+            Join a buisness incubator through e-application or Start an Incubator yourself.
+        </p>
+        <center><a class="btn btn-primary btn-lg" href= "{%url "main:incubators"%}">Find Incubator</a></center>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+  </center>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary  text-center">
+      <div class="card-body">
+        <p class="text-white m-0">"If You Dont Build Your Dream, 
+          <br/> Someone Will Hire You To Build Theirs.
+          "</p>
+      </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Startup</h2>
+            <p class="card-text">Have a buisness Idea but not the right people to work with ?
+               Build your buisness team, search for best mentors through out the
+              country, attract investors, advertise your product. 
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href='#' class="btn btn-primary">Visit</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">E - Network</h2>
+            <p class="card-text">
+              Team up with some of the people accross the nation and bring a change 
+              in the society. Use your skills to solve real time problems.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url "main:incubators" %}" class="btn btn-primary">Visit</a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Mentors</h2>
+            <p class="card-text">No one can understand a startup better than a qualified mentor with 
+              experience in the same. Mentors understand the needs of an early stage startup and provide
+              guidance in buisness and technical fields
+            </p>
+          </div><div class="card-footer">
+              <a href="{% url "main:incubators" %}" class="btn btn-primary">Visit</a>
+            </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- /.container -->
+  {%endblock%}

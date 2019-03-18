@@ -1,0 +1,110 @@
+{% load staticfiles %}
+<!-- maps stuff here !-->
+<body>
+<div id="floating-panel">
+    <button id="drop" onclick="drop()">Drop Markers</button>
+</div>
+  <div id="map"></div>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+  
+  <!-- maps stuff here !-->
+  
+  <link href="{%static "main/incubator/incubator.css"%}" rel="stylesheet" id="bootstrap-css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  
+  <link href = "{% static "main/css/navbar.css"%}" rel = "stylesheet">
+  
+  <p id="asd" ></p>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+    $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');
+  });
+  });
+  var a1 = {{lat}}; // right here
+  var a2 = {{lng}}; // and here
+  document.getElementById("asd").innerHTML += a1;
+  document.getElementById("asd").innerHTML += a2;
+  console.log(a1);
+  console.log(a2);
+  
+  //-- maps stuff here !
+  var neighborhoods = [];
+  var neighborLat = a1;
+  var neighborLng = a2;
+  
+  for (i = 0;i<neighborLat.length;i++)
+  {
+    neighborhoods.push({lat:neighborLat[i] , lng:neighborLng[i]});
+  }
+  console.log(neighborhoods);
+  
+  var markers = [];
+  var map;
+  
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 5,
+      center: {lat: 29, lng: 79}
+    });
+  }
+  
+  function drop() {
+    clearMarkers();
+    for (var i = 0; i < neighborhoods.length; i++) {
+      addMarkerWithTimeout(neighborhoods[i], i * 200);
+    }
+  }
+  
+  function addMarkerWithTimeout(position, timeout) {
+    window.setTimeout(function() {
+      markers.push(new google.maps.Marker({
+        position: position,
+        map: map,
+        animation: google.maps.Animation.DROP
+      }));
+    })
+  };
+  
+  function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+    markers = [];
+  }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmV6b3mN0jt75QfDlGr2jJNTx2Mhq1Lmo&callback=initMap">
+  </script>
+  <!-- maps stuff here !-->
+  <style type="text/css">
+    #map {
+      height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 20px;
+      padding: 10px;
+    }
+    #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 90%;
+      z-index: 5;
+      background-color: light black;
+      padding: 5px;
+      border: 0.1px solid #999;
+      text-align: center;
+      font-family: 'Roboto','sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+    }
+    #floating-panel {
+      margin-left: -52px;
+    }
+    </style>
+  <!-- maps stuff here !-->
+  

@@ -1,0 +1,32 @@
+/*!
+ * Start Bootstrap - Small Business (https://startbootstrap.com/template-overviews/small-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
+ */
+
+
+body {
+  padding-top: 54px;
+}
+
+.col-lg-4 h1{
+  font-weight: bold;
+}
+
+.col-lg-4 p{
+
+  font-family: Georgia;
+  font-weight: bold;
+  color: #000684; 
+}
+
+.row{
+  font-family: Georgia;
+  color: #000684;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}

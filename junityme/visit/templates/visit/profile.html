@@ -1,0 +1,220 @@
+{% load staticfiles %} }
+{% block content%}
+<!doctype html>
+<html>
+<head>
+    <title> Profile Widget</title>
+    <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+</head>
+
+<style type="text/css">
+
+                body
+         {
+	        margin: 0;
+	          padding: 0;
+	            background-image:url({% static 'visit/login/bg3.jpg' %}), linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%);
+	         background-size: cover;
+	        font-family: sans-serif;
+}
+
+
+body {
+    font: 12px "Helvetica";
+
+}
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+
+
+.main {
+    padding: 60px 10px 10px;
+    text-align: left;
+    display: block;
+    background-color: rgba(11, 89, 107, 0.5);
+}
+
+.container {
+    width: 1400px;
+    overflow: hidden;
+    height: 700px;
+    margin: 50px auto;
+    position: absolute;
+  -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+-moz-box-shadow:    0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+box-shadow:         0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+}
+.navigation {
+    background: #3E4858;
+}
+.navigation ul li {
+    border-bottom: 1px solid #323846;
+    border-top: 1px solid #515e72;
+}
+.navigation ul li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    overflow: hidden;
+    font: 17px 'Pathway Gothic One', sans-serif;
+}
+.cover {
+
+
+    height: 180px;
+    border-bottom: 5px solid #ffffff;
+    position: relative;
+    -webkit-box-shadow: 0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+    box-shadow:         0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+}
+
+.cover .avatar {
+    position: absolute;
+    background: #000;
+    border: 5px solid #ffffff;
+    cursor:pointer;
+    top: 125px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+    box-shadow:         0px 5px 5px -5px rgba(50, 50, 50, 0.3);
+}
+.cover .avatar .light {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+    top: -65px;
+    width: 100px;
+    height: 120px;
+    position: absolute;
+    left: 15px;
+    transform:rotate(-30deg);
+    -ms-transform:rotate(-30deg); /* IE 9 */
+    -webkit-transform:rotate(-30deg); /* Safari and Chrome */
+}
+
+.main h1 {
+    font-weight: bold;
+    text-shadow: 0 -1px 0 #888888;
+    color: #cecece;
+    font-size: 30px;
+    margin-bottom: -3px;
+}
+.main h6 {
+    font: italic 16px "NotoSans";
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.main p {
+    font: 14px/18px "Arial";
+}
+
+
+.btn {
+    border: none;
+    background: #bdc3c7;
+    color: #ffffff;
+    padding: 7px 0 6px;
+    line-height: 22px;
+    text-decoration: none;
+    text-shadow: none;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+.btn.success {
+    background-color: rgba(88, 214, 141, 0.7);
+}
+.btn.danger {
+    background-color: rgba(236, 112, 99, 0.8);
+}
+</style>
+
+<script type="text/javascript">
+
+        $(document).ready(function(){
+            $('.menu').click(function(){
+                $(this).toggleClass('active');
+                $(this).parents('.container').find('.navigation').slideToggle('fast');
+            });
+
+</script>
+<body>
+            <class="container">
+                <div class="navigation" style="display: none;">
+                    <ul class="nav">
+                        <li><a href="#">Add Friend</a></li>
+                        <li><a href="#">Follow</a></li>
+                        <li><a href="#">Message</a></li>
+                    </ul>
+                </div>
+                <div class="cover" style="background: ('fff.png') no-repeat center;" >
+                    <div class="head">
+                        <div class="menu left"></div>
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="avatar">
+                        <img class="group list-group-image" src="{{ user.userprofile.profile_photo.url }}" height = "100%" width = "100%" alt="" />
+                        <div class="light">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="main" style="display:block; margin-left: 250px; margin-right: 250px; " >
+
+                    <h2 align="center" style="margin-top: 50">Welcome, {{ user.get_full_name }} <small>{{ user.username }}</small>!</h2>
+                    <p>
+                    <p> <b> Your birth date: </b>{{ user.userprofile.birth_date }}</p>
+                    <p> <b> Your User Type: </b> {{ user.userprofile.user_type}}</p>
+                    <p> <b>Your Gender: </b>{{ user.userprofile.gender }}</p>
+                    <p> <b>Your Address: </b>{{ user.userprofile.address }}</p>
+                    <p> <b>Your Locality: </b> {{ user.userprofile.locality }}</p>
+                    <p> <b>Your State: </b> {{ user.userprofile.state }}</p>
+                    <p> <b>Your Postal code: </b>{{ user.userprofile.postal_code_4 }}</p>
+                    <p> <b>Your Skill Sets: </b> user.userprofile.skill_sets}}</p>
+
+</p>
+
+                </div>
+
+
+
+
+
+</body>
+</html>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+/*!
+ * Start Bootstrap - Blog Post (https://startbootstrap.com/template-overviews/blog-post)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-post/blob/master/LICENSE)
+ */
+
+h5.apply{
+  font-family: fantasy;
+  font-weight: bold;
+  color: #bc0b0b;
+  background-color: d0ecff;
+  text-align: center;
+}
+
+.inc-owner{
+  text-align: center;
+  left: 70%;
+
+}
+
+.inc-apply{
+  font-weight: 25px;
+  float: right;
+  left: 550%;
+  text-align: right;
+  margin-left: 500%;
+  font-size: 30px;
+  font-family: Georgia;
+  background-color: blue;
+}
+
+.rating-system{
+  left: 75%;
+  border: solide blue;
+  font: 16px;
+}
+
+body {
+  padding-top: 54px;
+}
+
+
+.mt-4{
+  text-align: center;
+  font-weight: bolder;
+  font-family: Verdana;
+
+}
+
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.img-fluid{
+  height: 300px;
+  width: 900px;
+}

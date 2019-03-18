@@ -1,0 +1,145 @@
+
+{%load staticfiles%}
+
+{%block content%}
+<title>Incubators: Search and Apply through e-application </title>
+
+
+<link href="{%static "main/incubator/incubator.css"%}" rel="stylesheet" id="bootstrap-css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href = "{% static "main/css/navbar.css"%}" rel = "stylesheet">
+
+
+<script>
+  $(document).ready(function() {
+  $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+  $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+});
+
+</script>
+  
+
+
+<style>
+  body{
+     /* The image used */
+     background-image: url("{% static "startup/background/img2.jpg" %}");
+    
+     /* Set a specific height */
+     height: 100%;
+ 
+     /* Create the parallax scrolling effect */
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
+  
+.map-button{
+  border: solid #0a40a4;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-left: 50%;
+  font-size: 26px;
+  color: #1c4ca3;
+  background: #86a8e7;
+  font-color:#093992;
+}
+</style>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="{%url "main:home"%}" style="float:left; font-size:40px; font-weight:bold;">EKYAM</a>
+  <div class="container">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+          
+        <li class="nav-item active">
+          <a class="nav-link" href="{%url "main:home"%}">Home
+            <span class="sr-only">(current)</span> &nbsp;&nbsp;
+          </a> 
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url "main:incubators"%}">Incubators</a>
+        </li>&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'startup:index'%}">Startups</a>
+        </li>&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" href='{% url 'mentors:index' %}'>Mentors</a>
+        </li> &nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" href="#">E-Network</a>
+        </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item" >
+              <a class="nav-link" style="color: #ffffff" href="{%url "main:add-incubator"%}">Add Incubator</a>
+        </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li>
+            <a class = "nav-link" style="color: #ffffff" href = "{% url "main:location" %}">Locate</a>
+        </li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+</style>
+
+<div style='clear: both;'/>
+
+
+
+
+
+<form action="/results/" method="GET">
+  <div id='container'>  
+        <div class='cell'><input type='search' placeholder='Search by Name' name = "inc_search"></div>
+        <div class='cell'><div class='button' type = "submit" name = "q">Find</div></div>
+      </div>
+  </form>
+</div>
+      <div class="container">
+        <div class="well well-sm">
+            <strong>View Type</strong>
+            <div class="btn-group">
+                <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+               </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                    class="glyphicon glyphicon-th"></span>Grid</a>
+            </div>
+        </div>
+    {%for inc in incubators%}
+    <div id="products" class="">
+            <div class="item  col-xs-4 col-lg-4">
+                <div class="thumbnail">
+                    <img class="group list-group-image" src="{{inc.logo.url}}" height = "125px" width = "400px" alt="" />
+                    <div class="caption">
+                        <h4 class="group inner list-group-item-heading">
+                            {{inc.incubator_name}}</h4>
+                        <p class="group inner list-group-item-text">
+                            {{inc.description}}</p>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <p class="lead">
+                                  {{inc.city_location}}  </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <a class="btn btn-success" href='{%url 'main:details' inc.id%}' class = "detail-link">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+    {% endfor %}
+
+
+
+{%endblock%}

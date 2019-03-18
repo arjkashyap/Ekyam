@@ -1,0 +1,40 @@
+
+{%load staticfiles%}
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<link rel = "stylesheet" type = "text/css" href = "{% static "visit/registration.css"%}">
+<head>
+    <title>Register</title>
+    <style>
+                body
+         {
+	        margin: 0;
+	          padding: 0;
+	            background-image:url({% static 'visit/login/bg3.jpg' %}), linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%);
+	         background-size: cover;
+	        font-family: sans-serif;
+}
+
+    </style>
+
+
+</head>
+
+<body>
+    <form method="POST" class = "loginBox">
+        {% csrf_token %}
+
+
+			<img src={% static "visit/login/user.png" %} class="user">
+			<h2 class = "register-text"> Register Here</h2>
+            {{ form.as_p }}
+              <p> Already have a account?   <a class = "join-link" href="{% url "visit:login" %}"><p>Login</p></a> </p>
+            <br>
+            <br>
+        <input class = "register-button" type="submit" name="" value="Register">
+
+    </form>
+</body>
+
+</html>

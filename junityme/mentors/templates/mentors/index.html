@@ -1,0 +1,43 @@
+{% extends 'mentors/base.html' %}
+
+{% block content %}
+  pass
+{% load staticfiles %}
+  <a href = "{% url "mentors:register" %}" > Register </a>
+
+  <link href="{%static "main/incubator/incubator.css"%}" rel="stylesheet" id="bootstrap-css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href = "{% static "main/css/navbar.css"%}" rel = "stylesheet">
+
+
+
+  {% for mentor in mentors %}
+  <div id="products" class="">
+      <div class="item  col-xs-4 col-lg-4">
+          <div class="thumbnail">
+              <img class="group list-group-image" src="{{ mentor.image.url }}" height = "325px" width = "400px" alt="" />
+              <div class="caption">
+                  <h4 class="group inner list-group-item-heading">
+                      {{mentor.name}}</h4>
+                      <h5 class="group inner list-group-item-heading">
+                          {{mentor.expertise}}</h5>
+                  <p class="group inner list-group-item-text">
+                      {{ mentor.description }}</p>
+                  <div class="row">
+                      <div class="col-xs-12 col-md-6">
+                          <p class="lead">
+                            {{mentor.location}}  </p>
+                      </div>
+                      <div class="col-xs-12 col-md-6">
+                          <a class="btn btn-success" href='#' class = "detail-link">Details</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+</div>
+{% endfor %}
+
+{% endblock %}

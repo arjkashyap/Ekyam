@@ -1,0 +1,159 @@
+{%extends 'main/base.html'%}
+
+{%block content%}
+<html lang="en">
+
+  <head>
+    {%load staticfiles%}
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Post - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{%static "main/details/vendor/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{%static "main/details/css/blog-post.css"%}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <style>
+      .lead{
+        font-size: 20px;
+        font-family: sans-serif;
+        align-content: center;
+        
+      }
+    </style>
+    
+    <!-- Page Content -->
+    <div class="container">
+      
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+            <div class= "card" style="background:rgb(19, 19, 19)">
+          <!-- Title -->
+          <h1 class="mt-4" style="color:white;">{{ inc.incubator_name }} <p class="lead">
+            by
+            <h4 class = "inc-owner" style="color:white;">{{ inc.owner }}</p>
+          </p></h1>
+        </div>
+
+          <!-- Author -->
+          
+<hr>
+
+          <!-- Preview Image -->
+       <img class="img-fluid rounded" src="{{ details.inc_img.url }}" alt=""> 
+
+          <hr>
+          <div class= "card" style="background:rgba(255, 255, 255,0.8)">
+            <center>
+          <div class = "rating-system">
+          <h3 style = "color:black">Ratings</h3><!-- start Star Ratings and Reviews -->
+          <script data-sil-id='5aa60061b2632c002df21686'> (function() {var d = document, w = window, l = window.location,p = l.protocol == 'file:' ? 'http://' : '//';
+              if (!w.WS) w.WS = {}; 
+              c = w.WS;
+              var m=function(t, o){  var e = d.getElementsByTagName('script'); e=e[e.length-1];  
+              var n = d.createElement(t); 
+              if (t=='script') {n.async=true;} for (k in o) n[k] = o[k];  
+              e.parentNode.insertBefore(n, e)};   
+              m('script', {      src: p+'bawkbox.com/widget/star-rating/5aa60061b2632c002df21686?page='+encodeURIComponent(l+''),      type: 'text/javascript'  });  c.load_net = m;})();</script>
+          <script type='application/ld+json' src='//bawkbox.com/widget/star-rating/5aa60061b2632c002df21686/microdata'></script><div class='sil-widget-star-rating sil-widge' id='sil-widget-5aa60061b2632c002df21686'></div>
+          <!-- end Star Ratings and Reviews -->
+          </div>
+
+
+          <!-- Post Content -->
+          
+          <p class="" style="font-size:large;color:black">  {{ details.inc_details }}</p>
+        </center>
+        </div>
+       
+          <hr>
+
+          <div class = "card-body">
+          Our Buisness accerelaration policy: {{ details.inc_policy }}
+        </div>
+      </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Categories Widget -->
+          <div class="card my-4" style="background:rgba(48, 48, 48, 0.6)">
+            <h5 class="card-header" style="color:white;font-size:large">{{ details.inc_name }}</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#" style="color:white;font-size:large">Success Rate</a>
+                    </li>
+                    <li>
+                      <a href="{% url "main:prediction"%}" style="color:white;font-size:large">Statistics</a>
+                    </li>
+                    <li>
+                      <a href='{% url 'main:news'%}' style="color:white;font-size:large">News</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#" style="color:white;font-size:large">Locate</a>
+                    </li>
+                    <li>
+                      <a href="{% url "main:startups" %}" style="color:white;font-size:large">Popular Startups</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <div class="card my-4" style = "background:rgba(48, 48, 48, 0.6)">
+            <h5 class="card-header" style="color:white;font-size:large">Address</h5>
+            <div class="card-body" style="color:white;font-size:large">
+              <p>{{ details.inc_address }}</p>
+            </div>
+          </div>
+
+
+          <div class="card my-4" style = "background:rgba(48, 48, 48, 0.6)">
+              <h5 class="card-header" style="color:white;font-size:large">Contact</h5>
+              <div class="card-body" style="color:white;font-size:large">
+                <p>{{ details.inc_contact }}</p>
+              </div>
+            </div>
+
+          <a href = "{%url "main:apply"%}"><h5 class="card-header apply" style="background:rgb(31, 31, 31);color:white;font-size:large ">APPLY</h5> </a>
+      
+            </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+
+
+    </div>
+    <!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{%static "main/details/vendor/jquery/jquery.min.js"%}"></script>
+    <script src="{%static "main/details/vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+
+  </body>
+
+</html>
+{%endblock%}

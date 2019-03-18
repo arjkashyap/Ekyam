@@ -1,0 +1,100 @@
+
+
+{%load staticfiles%}
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{%block title%} {%endblock%}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{%static "main/vendor/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{%static "main/css/small-business.css"%}" rel="stylesheet">
+
+</head>
+
+<style>
+  body {
+      /* The image used */
+       background-image: url("{% static "main/background/img7.jpg" %}");
+
+      /* Set a specific height */
+      height: 100%;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  </style>
+
+
+</style>
+
+<body>
+
+  <!-- Navigation Bar-->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/home/">Ekyam</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href='{%url 'main:home'%}'>Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='{%url 'main:incubators'%}'>Incubators</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href = '{% url 'startup:index'%}'>Startup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='{% url 'mentors:index' %}'>Mentors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "enetwork:index" %}">E-Network</a>
+
+          </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href = "{% url  "visit:profile" %}"><li><h2 style="color: antiquewhite;">Welcome, {{ user.get_full_name }}{{ user.username }}!</h2></li></a>
+            <li>   {% if user.is_authenticated %} &nbsp;
+        <a href="{% url "visit:logout" %}" style="color: whitesmoke;">logout</a>
+      {% else %}
+        <a href="{% url 'visit:login' %}">login</a> / <a href="{% url 'visit:registration' %}">signup</a>
+      {% endif %}</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {%block content%}
+  {%endblock%}
+
+  <!-- Footer -->
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+
+
+
+
+
+

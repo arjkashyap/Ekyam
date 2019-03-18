@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Startups: Add project, search jobs and Market</title>
+    {% load staticfiles %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "startup/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "startup/css/business-frontpage.css" %}" rel="stylesheet">
+
+    <style>
+            .business-header{
+                background-image: url("{% static "startup/background/img2.jpg" %}");
+            }
+
+            body {
+                padding-top: 54px;
+                background-image:url({% static 'startup/background/bg3.jpg' %}), linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%);
+              }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/home/">Ekyam</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href='{%url 'main:home'%}'>Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='{%url 'main:incubators'%}'>Incubators</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href = '{% url 'startup:index'%}'>Startup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='{% url 'mentors:index' %}'>Mentors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">E- Network </a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Header with Background Image -->
+    <header class="business-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-8">
+          <h2 class="mt-4"> Ekyam Startups</h2>
+          <p>Have An Idea but Not the right team? Try Using Ekyam Building Portal to find the people with right skills for your dream company.</p>
+          <p>Looking for a place where your skills can be utilised. Search for potential projects and join the team with Ekyam- Job portal.</p>
+        <br>  <p> Find out the latest and best startup projects in Market</p>
+
+          <p>
+            <a class="btn btn-primary btn-lg" href="{% url "startup:market" %}">Market &raquo;</a>
+          </p>
+        </div>
+      
+
+      <div class="row">
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="{% static "startup/background/img5.jpg" %}" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Add Startup</h4>
+              <p class="card-text">Add Your Product To the market. Earn sales profit and investement benifits. Recieve Reviews on the product from active varified Users.</p>
+            </div>
+            <div class="card-footer">
+              <a href='{% url 'startup:add'%}' class="btn btn-primary">Add Product</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="{% static "startup/background/img4.jpg" %}" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Build Team</h4>
+              <p class="card-text">Search Skilled professionals for startup idea and create a team with virtual co-working network. Add Project summary and have the choice to accept the applicants.</p>
+            </div>
+            <div class="card-footer">
+              <a href='{%url 'startup:team'%}' class="btn btn-primary">Build Team</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 my-4">
+          <div class="card">
+            <img class="card-img-top" src="{% static "startup/background/img6.jpg" %}" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Search Jobs</h4>
+              <p class="card-text">Search for active projects which are open to job applications. Be the part of the virtual co-working network.</p>
+            </div>
+            <div class="card-footer">
+              <a href='{%url 'startup:jobs'%}' class="btn btn-primary">Join Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static "startup/vendor/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "startup/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+
+  </body>
+
+</html>

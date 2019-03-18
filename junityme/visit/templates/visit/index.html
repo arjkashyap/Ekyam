@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {%load staticfiles%}
+  <meta charset="utf-8">
+  <title>Ekyam: India's First Entrepreneurial Ecosystem</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="img/icons/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/72x72.png">
+  <link rel="apple-touch-icon-precomposed" href="img/icons/default.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static "visit/lib/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static "visit/lib/font-awesome/css/font-awesome.min.css"%}" rel="stylesheet">
+  <link href="{% static "visit/lib/owlcarousel/owl.carousel.min.css" %}" rel="stylesheet">
+  <link href="{% static "visit/lib/owlcarousel/owl.theme.min.css"%}" rel="stylesheet">
+  <link href="{% static "visit/lib/owlcarousel/owl.transitions.min.css" %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{%static "visit/css/style.css"%}" rel="stylesheet">
+
+  <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
+  <link href="#" id="colour-blue" rel="stylesheet">
+
+</head>
+
+<body class="page-index has-hero">
+  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
+  <div id="background-wrapper" class="city" data-stellar-background-ratio="0.1">
+
+    <!-- ======== @Region: #navigation ======== -->
+    <div id="navigation" class="wrapper">
+      <!--Header & navbar-branding region-->
+      <div class="header">
+        <div class="header-inner container">
+          <div class="row">
+            <div class="col-md-8">
+              <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
+              <a class="navbar-brand" href="{%url "visit:index"%}" title="Home">
+                <h1 class="hidden">
+                    <h1><strong>EKYAM</strong></h1>
+                  </h1>
+              </a>
+			  <br/>
+              <div class="navbar-slogan">
+                Hub Of StartUp
+                <br> By The Brogrammers
+              </div>
+            </div>
+            <!--header rightside-->
+            <div class="col-md-4">
+              <!--user menu-->
+              <ul class="list-inline user-menu pull-right">
+              </ul>
+              <ul class="list-inline user-menu pull-right">
+                <li class="user-register"><i class="fa fa-edit text-primary "></i> <a href="{% url "visit:registration"%}" class="text-uppercase">Register</a></li>
+                <li class="user-login"><i class="fa fa-sign-in text-primary"></i> <a href="{% url "visit:login"%}" class="text-uppercase">Login</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="navbar navbar-default">
+          <!--mobile collapse menu button-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+
+          <!--everything within this div is collapsed on mobile-->
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" id="main-menu">
+              <li class="icon-link">
+                <a href= "{%url "visit:index"%}" ><i class="fa fa-home"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Comunity
+                  </a>
+                <!-- Dropdown Menu -->
+              <li><a href="{% url "visit:registration"%}">Join Us</a></li>
+              <li class="dropdown dropdown-mm">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
+    
+                <!-- Dropdown Menu -->
+              </li>
+            </ul>
+          </div>
+          <!--/.navbar-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="hero" id="highlighted">
+      <div class="inner">
+        <!--Slideshow-->
+        <div id="highlighted-slider" class="container">
+          <div class="item-slider" data-toggle="owlcarousel" data-owlcarousel-settings='{"singleItem":true, "navigation":true, "transitionStyle":"fadeUp"}'>
+            <!--Slideshow content-->
+            <!--Slide 1-->
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6 col-md-push-6 item-caption">
+                  <h2 class="h1 text-weight-light" >
+                      WELCOME
+                    </h2>
+                  <h4>
+                      India's Entrepreneurial Ecosystem.
+                    </h4>
+                  <p style="margin-right:70px; fonts-size:20px;">We provide Business Incubation services to startups for accelerating their growth and success. Our goal is to provide an array of services that would support a growing business. We offer services such as - office space, finance, technical services, mentorship, job seeking/advertising and networking. Shared work space in existing incubators results in an ideal environment for members, there is a better flow of ideas between the co working entrepreneurs.  This system results in sharing of services and collaboration.
+                  </p>
+                </div>
+                <div class="col-md-6 col-md-pull-6 hidden-xs">
+                  <img src="img/slides/slide1.png"  class="center-block img-responsive">
+                </div>
+              </div>
+            </div>
+            <!--Slide 2-->
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6 text-right-md item-caption">
+                  <h2 class="h1 text-weight-light" style="color:black; font-weight:bold;">
+                      <span >E - </span> Incubator Services
+                    </h2>
+                  <h4>
+                      Access to Incubator services spread accross the nation.
+                    </h4>
+                  <p style="margin-left=30px;">Details of Services and E-application to enroll in Incubator programs </p>
+                  <br/>
+                  <hr/>
+
+                  <a href="#" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>
+                </div>
+                <div class="col-md-6 hidden-xs">
+                  <img src="img/slides/slide2.png"  class="center-block img-responsive">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== @Region: #content ======== -->
+  <div id="content">
+    <!-- Mission Statement -->
+    <div class="mission text-center block block-pd-sm block-bg-noise">
+      <div class="container">
+        <h2 class="text-shadow-white">
+            We host a special portal dedicated for creating a virtual co working environment in which, real time problems are listed. A network has been setup such that a user can create/join a virtual team and start project dedicated on solving the problem, which can further be advanced to a startup or an open source projects.
+
+0          </h2>
+      </div>
+    </div>
+    <!--Showcase-->
+    <div class="showcase block block-border-bottom-grey">
+      <div class="container">
+        <h2 class="block-title">
+          <!-------
+          
+         
+    <!-- Services -->
+    <div class="services block block-bg-gradient block-border-bottom">
+      <div class="container">
+        <h2 class="block-title">
+           <b>
+
+              Our Services
+
+           </b>
+          </h2>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+                Co-Working Buisness Enviroment
+              </h4>
+            <p>A special portal dedicated on Virtual Enviroment Network for Users to work on Multiple
+            prjojects and promote Open Sourcing </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+                Search Incubator
+              </h4>
+            <p> Access to various incubator services spread across
+the country in a decoupled manner.
+We provide Business Incubation services to startups for accelerating their growth and success.</p>
+            <p>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-cogs fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+               Mentorship
+              </h4>
+            <p>Startup teams can hire mentors through our website for proper guidance.</p>
+            <p>
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pricing -->
+    <div class="block-contained">
+      <h2 class="block-title">
+        <b>Features</b>
+        </h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel panel-default panel-pricing text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  Incubators.
+                </h4>
+            </div>
+
+            
+            <div class="panel-body" style="background:#04C7DA;">
+              <ul class="list-dotted"><strong>
+                <li>A total of 24 registered Incubators.</li>
+                <li>Spread across seven states.</li>
+                <li>locations of incubators are shared.</li>
+                <li>Performance graph is also plotted.</li>
+              </ul></strong>
+              
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  Mentors
+                                  </h4>
+            </div>
+            <div class="panel-body" style="background:#04C7DA;">
+              <ul class="list-dotted"><strong>
+                <li>124 Registered mentors.</li>
+                <li>Special Portal Dedicated to Mentors</li>
+                <li>73 Clients enjoying Mentorship</li>
+                <li>Mentors are document verified.</li>
+              </ul></strong>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  Investors
+                  </h4>
+            </div>
+            <div class="panel-body" style="background:#04C7DA;">
+              <ul class="list-dotted"> <strong>
+                <li>146 Verified Investors.</li>
+                <li>Raised over 50 teams.</li>
+                <li>Start-up Funds for 10 millions.</li>
+                <li>Only good past record investors are being selected.</li>
+              </ul></strong>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="panel panel-default panel-pricing panel-pricing-highlighted text-center" >  
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                  Market Place
+                </h4>
+            </div>
+
+            <div class="panel-body"style="background:#04C7DA;">
+              <ul class="list-dotted"><strong>
+                <li>Over 10k Products.</li>
+                <li>Catagorized into no. of sections.</li>
+                <li>Helps emerging start-ups to showcase their products.</li>
+                <li>Platform for all to buy new technologies from one place.</li>
+              </ul>
+</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+Background image callout with CSS overlay
+Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQuery .block-bg-overlay = overlays the background image, colour is inherited from block-bg-* classes .block-bg-overlay-NUMBER = determines opcacity value of overlay from 1-9 (default is 5) ie. .block-bg-overlay-2 or .block-bg-overlay-6
+-->
+    <div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="https://picjumbo.imgix.net/HNCK1088.jpg?q=40&amp;w=1650&amp;sharp=30" data-stellar-background-ratio="0.3">
+      <h2 class="h-xlg h1 m-a-0">
+          <span data-counter-up>6.00</span>s
+        </h2>
+      <h3 class="h-lg m-t-0 m-b-lg">
+          Of Happy Customers!
+        </h3>
+      <p>
+        <a href="{% url "visit:registration"%}" class="btn btn-more btn-lg i-right">Join them today! <i class="fa fa-angle-right"></i></a>
+      </p>
+    </div>
+    <!--Customer testimonial & Latest Blog posts-->
+    <div class="testimonials block-contained">
+      <div class="row">
+        <!--Customer testimonial-->
+        <div class="col-md-6 m-b-lg">
+          <h3 class="block-title">
+            <b>Testimonials</b>
+            </h3>
+          <blockquote>
+            <p>GREAT THINGS NEVER COME FROM COMFORT ZONE.</p>
+            <img src="img/misc/charles-quote.png" alt="Charles Spencer Chaplin">
+            <small>
+                <strong>Charles Chaplin</strong>
+                <br>
+                British comic actor
+              </small>
+          </blockquote>
+        </div>
+        <!--Latest Blog posts-->
+        <div class="col-md-6 blog-roll">
+          <h3 class="block-title">
+              <strong>Latest From Our Blog.</strong>
+            </h3>
+          <!-- Blog post 1-->
+          <div class="media">
+            <div class="media-left hidden-xs">
+              <!-- Date desktop -->
+              <div class="date-wrapper"> <span class="date-m">Feb</span> <span class="date-d">01</span> </div>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">
+                  <a href="#" class="text-weight-strong">Conference meeting at Incubator center at Hyderabad.</a>
+                </h4>
+              <!-- Meta details mobile -->
+              <ul class="list-inline meta text-muted visible-xs">
+                <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> Fri 1st Feb 2018</li>
+                <li><i class="fa fa-user"></i> <a href="#">Joe</a></li>
+              </ul>
+              <p>
+                 <strong>Technical exhibition.</strong> For innovators and researchers.
+                
+              </p>
+            </div>
+          </div>
+          <!-- Blog post 2 -->
+          <div class="media">
+            <div class="media-left hidden-xs">
+              <!-- Date desktop -->
+              <div class="date-wrapper"> <span class="date-m">Jan</span> <span class="date-d">18</span> </div>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">
+                  <a href="#" class="text-weight-strong">Want to explore the world ?</a>
+                </h4>
+              <!-- Meta details mobile -->
+              <ul class="list-inline meta text-muted visible-xs">
+                <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> Thu 17th Jan 2013</li>
+                <li><i class="fa fa-user"></i> <a href="#">Joe</a></li>
+              </ul>
+              <p>
+                Join us and get a chance to explore and learn from Mentors and explore. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /content -->
+  <!-- Call out block 
+  <div class="block block-pd-sm block-bg-primary">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8">
+          <div class="row">
+            <!--Client logos should be within a 120px wide by 60px height image canvas
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 1">
+                  <img src="img/clients/client1.png" alt="Client 1 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 2">
+                  <img src="img/clients/client2.png" alt="Client 2 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 3">
+                  <img src="img/clients/client3.png" alt="Client 3 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 4">
+                  <img src="img/clients/client4.png" alt="Client 4 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 5">
+                  <img src="img/clients/client5.png" alt="Client 5 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 6">
+                  <img src="img/clients/client6.png" alt="Client 6 logo" class="img-responsive">
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+{% block content %}
+
+{% endblock %}
+  <!-- ======== @Region: #footer ======== -->
+  <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="img/bg_footer-map.png" data-stellar-background-ratio="0.4">
+    <div class="container">
+
+      <div class="row" id="contact">
+
+        <div class="col-md-3" style="font-size:20px">
+          <address>
+              <strong>JunityMe Inc.</strong>
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i> Maharishi Markandeshwar Engineering College
+              <br>
+              
+              <i class="fa fa-envelope-o fa-fw text-primary"></i> info@junityme.com
+              <br> <br>
+               <div class="copy">
+                 <p>©Junityme</p>
+                </div>
+            </address>
+          </div>
+
+            <div class="col-md-3" style="font-size:20px;">
+         
+          <address>
+              <strong>Services</strong>
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i> Entrepreneurs
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i>Incubators
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i> Start-Ups
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i>Mentors
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i>E-Networking.
+
+            </address>
+        </div>
+   <div class="col-md-3" style="font-size:20px;">
+         
+          <address>
+              <strong>Contact</strong>
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i> Conatact@junityme.com
+              <br>
+              <i class="fa fa-map-pin fa-fw text-primary"></i>About Us.
+              <br>
+             
+
+            </address>
+        </div>
+        <h4 ><strong>Newsletter</strong></h4>
+              <div class="footer_search">
+                   <form style="padding:20px;">
+                  <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+                  <input type="submit" value="Subscribe">
+                   </form>
+                  </div>
+
+
+      <a href="#top" class="scrolltop">Top</a>
+
+    </div>
+  </footer>
+
+  <!-- Required JavaScript Libraries -->
+  <script src="{% static "visit/lib/jquery/jquery.min.js"%}"></script>
+  <script src="{% static "visit/lib/bootstrap/js/bootstrap.min.js"%}"></script>
+  <script src="{% static "visit/lib/owlcarousel/owl.carousel.min.js"%}"></script>
+  <script src="{% static "visit/lib/stellar/stellar.min.js"%}"></script>
+  <script src="{% static "visit/lib/waypoints/waypoints.min.js"%}"></script>
+  <script src="{% static "visit/lib/counterup/counterup.min.js"%}"></script>
+  <script src="{% static "visit/contactform/contactform.js"%}"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="{%static "visit/js/custom.js"%}"></script>
+
+  <!--Custom scripts demo background & colour switcher - OPTIONAL -->
+  <script src="{% static "visit/js/color-switcher.js"%}"></script>
+
+
+
+</body>
+
+</html>

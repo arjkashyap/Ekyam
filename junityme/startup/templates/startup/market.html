@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+{% extends 'startup/base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Market Place</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+{% load staticfiles %}
+
+
+
+  <!-- Favicons -->
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static "startup/market/" %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static "startup/market/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" %}">
+  <link href="{% static "startup/market/lib/animate/animate.min.css" %}" rel="stylesheet">
+  <link href="{% static "startup/market/lib/ionicons/css/ionicons.min.css" %}" rel="stylesheet">
+  <link href="{% static "startup/market/lib/owlcarousel/assets/owl.carousel.min.css" %}" rel="stylesheet">
+  <link href="{% static "startup/market/lib/magnific-popup/magnific-popup.css" %}" rel="stylesheet">
+  <link href="{% static "startup/market/lib/ionicons/css/ionicons.min.css" %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static "startup/market/css/style.css" %}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Reveal
+    Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+
+  
+
+</head>
+
+<style>
+    body{
+      background-image:url({% static 'main/background/bg3.jpg' %});
+    }
+</style> 
+
+<body id="body">
+
+  
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+
+    <div class="intro-content">
+      <h2>Making <span>your ideas</span><br>happen!</h2>
+      <div>
+        <a href="{% url "startup:add" %}" class="btn-get-started scrollto">Add Your Product</a>
+        <a href="#portfolio" class="btn-projects scrollto">Products</a>
+      </div>
+    </div>
+
+    <div id="intro-carousel" class="owl-carousel" >
+      <div class="item" style="background-image: url('img/intro-carousel/1.jpg');"></div>
+      <div class="item" style="background-image: url('img/intro-carousel/2.jpg');"></div>
+      <div class="item" style="background-image: url('img/intro-carousel/3.jpg');"></div>
+      <div class="item" style="background-image: url('img/intro-carousel/4.jpg');"></div>
+      <div class="item" style="background-image: url('img/intro-carousel/5.jpg');"></div>
+    </div>
+
+  </section><!-- #intro -->
+
+
+
+  <main id="main">
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="about" class="wow fadeInUp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="{% static "market/img/mp.jpg" %}" alt="">
+          </div>
+
+ 
+            <ul>
+      x        <li><i class="ion-android-checkmark-circle"></i> I.O.T Products.</li>
+              <li><i class="ion-android-checkmark-circle"></i> Smart products to make your life easier. </li>
+              <li><i class="ion-android-checkmark-circle"></i> Products made by the emerging start-ups.</li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Products</h2>
+          
+        </div>
+
+        <div class="row">
+
+
+
+{% for product in products %}
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft" data-wow-delay="0.2s">
+              <h4 class="title"><a href="">{{ product.startup_name }}</a></h4>
+              <p class="description">{{ product.startup_desc }}</p>
+            <img src="{{ product.startup_img.url }}" alt="" />
+            </div>
+          </div>
+{% endfor %}
+
+      </div>
+    </section><!-- #services -->
+
+   
+    <!--==========================
+      Our Portfolio Section
+    ============================-->
+  
+      <div class="container-fluid">
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="img/portfolio/p1.jpg" class="portfolio-popup">
+                <img src="img/portfolio/p1.jpg" alt="">
+                <div class="portfolio-overlay">
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="img/portfolio/p2.jpg" class="portfolio-popup">
+                <img src="img/portfolio/p2.jpg" alt="">
+                <div class="portfolio-overlay">
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="img/portfolio/p3.jpg" class="portfolio-popup">
+                <img src="img/portfolio/p3.jpg" alt="">
+                <div class="portfolio-overlay">
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="img/portfolio/p4.jpg" class="portfolio-popup">
+                <img src="img/portfolio/p4.jpg" alt="">
+                <div class="portfolio-overlay">
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="img/portfolio/p5.jpg" class="portfolio-popup">
+                <img src="img/portfolio/p5.jpg" alt="">
+                <div class="portfolio-overlay">
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="img/portfolio/6.jpg" class="portfolio-popup">
+                <img src="img/portfolio/6.jpg" alt="">
+                <div class="portfolio-overlay">
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="img/portfolio/7.jpg" class="portfolio-popup">
+                <img src="img/portfolio/7.jpg" alt="">
+                <div class="portfolio-overlay">
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="portfolio-item wow fadeInUp">
+              <a href="img/portfolio/8.jpg" class="portfolio-popup">
+                <img src="img/portfolio/8.jpg" alt="">
+                <div class="portfolio-overlay">
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #portfolio -->
+
+  </main>
+
+</div>
+
+</h3>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Junityme</strong>. All Rights Reserved
+      </div>
+          </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static "startup/market/lib/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "startup/market/lib/jquery/jquery-migrate.min.js" %}"></script>
+  <script src="{% static "startup/market/lib/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "startup/market/lib/easing/easing.min.js" %}"></script>
+  <script src="{% static "startup/market/lib/superfish/hoverIntent.js" %}"></script>
+  <script src="{% static "startup/market/lib/superfish/superfish.min.js" %}"></script>
+  <script src="{% static "startup/market/lib/wow/wow.min.js" %}"></script>
+  <script src="{% static "startup/market/lib/owlcarousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static "startup/market/lib/magnific-popup/magnific-popup.min.js" %}"></script>
+  <script src="{% static "startup/market/lib/sticky/sticky.js" %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static "startup/market/contactform/contactform.js" %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static "startup/market/js/main.js" %}"></script>
+
+</body>
+</html>
+
+{% endblock %}

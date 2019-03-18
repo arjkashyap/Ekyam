@@ -1,0 +1,9 @@
+<form method="post" novalidate enctype="multipart/form-data" class = "loginBox">
+        {% csrf_token %}
+			<h2 class = "register-text" style="font-size: 30px;"> Add Incubator</h2>
+            {{ form.as_p }}
+
+        <input class = "register-button" type="submit" name="" value="Add Incubator">
+
+
+    </form>

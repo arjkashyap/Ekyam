@@ -1,0 +1,130 @@
+{% extends 'visit/base.html'%}
+{% block content%}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+
+        <style>
+
+body
+{
+	margin: 0;
+	padding: 0;
+	background-image:url({% static 'visit/img/backgrounds/bg3.jpg' %}), linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%);
+	background-size: cover;
+	font-family: sans-serif;
+}
+.loginBox
+{
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	height: 365px;
+	background: rgba(0,0,0,.6);
+}
+.user
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50% - 50px);
+}
+h2
+{
+	margin: 0;
+	padding: 0 0 20px;
+	color: #2565ff;
+	text-align: center;
+}
+.loginBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+}
+.loginBox input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.loginBox input[type="text"],
+.loginBox input[type="Password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	height: 40px;
+	background: transparent;
+	color: #fff;
+	font-size: 16px;
+}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.loginBox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background: #2565ff;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.loginBox input[type="submit"]:hover
+{
+	background: #efed40;
+	color: #262626;
+}
+.loginBox a
+{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+        </style>
+
+
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel = "stylesheet" type = "text/css" href = "{% static "visit/login.css"%}">
+	</head>
+	<body>
+        <form method="POST" class = "login-form">
+            {% csrf_token %}
+		<div class="loginBox">
+			<img src={% static "visit/login/user.png" %} class="user">
+			<h2>Log In</h2>
+				<p>Username</p>
+                <input type="text" name="username" >
+
+				<p>Password</p>
+				<input type="password" name="password" placeholder="">
+				<!--<button type="submit">Login</button>    -->
+                <input type="submit" name="" value="Sign In">
+            </div>
+	    </form>
+    </body>
+
+
+
+
+
+
+</html>
+{% endblock %}
