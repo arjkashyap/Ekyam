@@ -1,0 +1,6 @@
+Follow these instructions to run the web app:
+1) Install python
+2) Install Django. In the terminal type "pip install django" and press enter.
+3) Open the terminal in main file directory (one with manage.py file) and run 
+python manage.py runserver
+4) Copy paste the server address in browser.
